@@ -12,7 +12,8 @@ public class AddressBook {
 	}
 
 	public void addBuddy(Buddyinfo buddy) {
-		list.add(buddy);
+		if (buddy != null)
+				this.list.add(buddy);
 	}
 	
 	
@@ -25,14 +26,14 @@ public class AddressBook {
 		this.list.add(buddy);
 	}
 
-	public void removeBuddy(String name) {
+	public Buddyinfo removeBuddy(String name) {
 		for(int i=0;i < list.size();i++) {
 			if (list.get(i).getName().equals(name)) {
-				list.remove(i);
-				break;
+				return this.list.remove(i);	
 			}
 		}
 		System.out.print("There isn't BuddyInfo");
+		return null;
 	}
 	
 	public void print_all() {
@@ -47,10 +48,10 @@ public class AddressBook {
 		Buddyinfo buddy3 = new Buddyinfo("Hun", 888 ,"ON");
 		Buddyinfo buddy4 = new Buddyinfo("Jeffy", 9999,"my home");
 		
-		AddressBook list = new AddressBook();
-		list.addBuddy(buddy1);
-		list.addBuddy(buddy2);
-		list.addBuddy(buddy3);
-		list.addBuddy(buddy4);
+		AddressBook addressBook = new AddressBook();
+		addressBook.addBuddy(buddy1);
+		addressBook.addBuddy(buddy2);
+		addressBook.addBuddy(buddy3);
+		addressBook.addBuddy(buddy4);
 	}
 }
