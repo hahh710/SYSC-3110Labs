@@ -52,6 +52,5 @@ public class AddressBook {
 		list.addBuddy(buddy2);
 		list.addBuddy(buddy3);
 		list.addBuddy(buddy4);
-		//for push!!
 	}
 }
